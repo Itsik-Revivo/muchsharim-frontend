@@ -2,13 +2,14 @@ import { ReactNode, ButtonHTMLAttributes, InputHTMLAttributes, SelectHTMLAttribu
 import { Loader2 } from 'lucide-react';
 
 // ── Badge ────────────────────────────────────────────────────
-type BadgeVariant = 'blue' | 'green' | 'amber' | 'gray' | 'red';
+type BadgeVariant = 'blue' | 'green' | 'amber' | 'gray' | 'red' | 'purple';
 const badgeStyles: Record<BadgeVariant, string> = {
   blue:  'bg-blue-50 text-blue-800 border-blue-200',
   green: 'bg-green-50 text-green-800 border-green-200',
   amber: 'bg-amber-50 text-amber-800 border-amber-200',
   gray:  'bg-gray-100 text-gray-600 border-gray-200',
   red:   'bg-red-50 text-red-700 border-red-200',
+  purple:'bg-purple-50 text-purple-700 border-purple-200',
 };
 export function Badge({ children, variant = 'gray' }: { children: ReactNode; variant?: BadgeVariant }) {
   return <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${badgeStyles[variant]}`}>{children}</span>;
